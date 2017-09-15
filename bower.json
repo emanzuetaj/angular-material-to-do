@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "description": "Angular Material To-Do app",
+  "main": "index",
+  "authors": [
+    "Elias J Manzueta"
+  ],
+  "private": true,
+  "dependencies": {
+    "angular-material": "^1.1.5",
+    "angular": "^1.6.6",
+    "angular-ui-router": "^1.0.6"
+  }
+}
