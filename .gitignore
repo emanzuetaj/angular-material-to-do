@@ -1,3 +1,5 @@
 #bower
 bower_components
 node_modules
+wwwroot
+tmp
