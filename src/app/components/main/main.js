@@ -14,8 +14,18 @@
             templateUrl: 'main/main.html',
             controller: [MainController]
         });
+    angular
+        .module('app')
+        .config(['$routeProvider', function($routeProvider) {
+            $routeProvider.when('/', {
+                name: 'main',
+                component: 'main',
+                url: '/',
+                template: '<main></main>'
+            });
+        }]);
     function MainController() {
         var vm = this;
-        vm.message = 'Hello World';
+        vm.message = 'Main component';
     }
 })(window.angular);

@@ -2,8 +2,12 @@
     'use strict';
     angular
         .module('app', [
-            'ngMaterial'])
+            'ngRoute',
+            'ngMaterial',
+            'ngAnimate'])
         .config(['$mdThemingProvider', function($mdThemingProvider) {
-            $mdThemingProvider.disableTheming();
+            $mdThemingProvider.theme('default')
+            .primaryPalette('blue')
+            .backgroundPalette('grey');
         }]);
 }(window.angular));
