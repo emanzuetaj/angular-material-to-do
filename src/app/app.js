@@ -2,5 +2,8 @@
     'use strict';
     angular
         .module('app', [
-            'ngMaterial']);
+            'ngMaterial'])
+        .config(['$mdThemingProvider', function($mdThemingProvider) {
+            $mdThemingProvider.disableTheming();
+        }]);
 }(window.angular));
