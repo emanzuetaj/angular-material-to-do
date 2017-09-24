@@ -9,14 +9,13 @@
             </md-button>
             <h1>To-Do App</h1>
         </md-toolbar>
-        <div flex layout="row" layout-padding> 
+        <div flex layout="row"> 
             <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
                         md-component-id="left" ng-click="toggleMenu()">
-                <!-- Custom UsersList component -->
                 <menu></menu>
             </md-sidenav>
             
-            <md-content flex id="content">
+            <md-content flex style="padding-left: 10px;">
                 <ng-view></ng-view>
             </md-content>
         </div>
