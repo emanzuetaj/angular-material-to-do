@@ -1,1 +1,10 @@
-<h4>{{vm.message}}</h4>
+<md-list>
+    <md-list-item class="md-3-line" ng-repeat="item in vm.list" ng-click="null">
+            <md-icon md-font-library="material-icons">today</md-icon>
+        <div class="md-list-item-text" layout="column">
+            <h3>{{ item.title }}</h3>
+            <h4>{{ item.description }}</h4>
+            <p>{{ item.date }}</p>
+        </div>
+    </md-list-item>
+</md-list>

@@ -12,7 +12,7 @@
         .component('main', {
             controllerAs: 'vm',
             templateUrl: 'main/main.html',
-            controller: [MainController]
+            controller: ['toDoService', MainController]
         });
     angular
         .module('app')
@@ -24,8 +24,8 @@
                 template: '<main></main>'
             });
         }]);
-    function MainController() {
+    function MainController(toDoService) {
         var vm = this;
-        vm.message = 'Main component';
+        vm.list = toDoService.getList();
     }
 })(window.angular);
