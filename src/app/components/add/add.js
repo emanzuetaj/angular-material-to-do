@@ -26,6 +26,12 @@
         }]);
     function AddController() {
         var vm = this;
-        vm.message = 'Add component';
+        vm.newItem = {
+            'title': null,
+            'description': null,
+            'complete': false,
+            'canceled': false,
+            'date': null
+        };
     }
 })(window.angular);
