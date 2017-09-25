@@ -16,7 +16,6 @@
         });
     function MenuController($rootScope, $mdSidenav, $location) {
         var vm = this;
-        alert($location.path());
         vm.options = [
             {
                 'name': 'Main',
@@ -33,6 +32,7 @@
         vm.selectOption = function(option) {
             vm.selected = option;
         };
+        // select option on first load
         for (var i = 0; i < vm.options.length; i++) {
             if (vm.options[i].url.replace('./#!', '') === $location.path()) {
                 vm.selectOption(vm.options[i]);
