@@ -1,0 +1,9 @@
+<md-list>
+    <md-item ng-repeat="option in vm.options">
+        <md-item-content>
+            <md-button href="{{option.url}}" ng-click="vm.selectOption(option)" ng-class="{'md-raised md-primary' : option === vm.selected }" class="sidenav-btn">
+                {{option.name}}
+            </md-button>
+        </md-item-content>
+    </md-item>
+</md-list>

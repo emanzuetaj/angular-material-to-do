@@ -1,23 +1,24 @@
 <html ng-app="app">
-    <title>ToDo App - Material Design</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- inject:css -->
-    <!-- endinject -->
-    <body ng-cloak layout="column" layout-padding>
-        <md-toolbar layout="row" class="md-toolbar-tools">
-            <md-button class="menu md-icon-button" hide-gt-sm ng-click="toggleMenu()"
-                    aria-label="Show Menu">
-                    <md-icon md-font-library="material-icons">menu</md-icon>
-            </md-button>
-            <h1>To-Do App</h1>
-        </md-toolbar>
-        <div flex layout="row"> 
-            <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
-                        md-component-id="left" ng-click="toggleMenu()">
-                <menu></menu>
-            </md-sidenav>
-            
-            <md-content flex style="padding-left: 10px;">
+    <head>
+        <title>ToDo App - Material Design</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- inject:css -->
+        <!-- endinject -->
+    </head>
+    <body ng-cloak layout="row">
+        <md-sidenav class="md-whiteframe-4dp" md-is-locked-open="$mdMedia('gt-sm')"
+                    md-component-id="left" ng-click="toggleMenu()">
+            <nav-menu></nav-menu>
+        </md-sidenav>
+        <div layout="column" flex>
+            <md-toolbar layout="row" class="md-toolbar-tools" style="padding-left:10px;">
+                <md-button class="menu md-icon-button" hide-gt-sm ng-click="toggleMenu()"
+                        aria-label="Show Menu">
+                        <md-icon md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <h1>To-Do App</h1>
+            </md-toolbar>           
+            <md-content layout="column" style="padding-left: 10px;" flex>
                 <ng-view></ng-view>
             </md-content>
         </div>

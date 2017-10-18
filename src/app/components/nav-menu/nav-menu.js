@@ -2,19 +2,19 @@
     'use strict';
     /**
      * @ngdoc component
-     * @name app.component:Menu
+     * @name app.component:NavMenu
      *
      * @description
      * Menu component of the application
      */
     angular
         .module('app')
-        .component('menu', {
+        .component('navMenu', {
             controllerAs: 'vm',
-            templateUrl: 'menu/menu.html',
-            controller: ['$rootScope', '$mdSidenav', '$location', MenuController]
+            templateUrl: 'nav-menu/nav-menu.html',
+            controller: ['$rootScope', '$mdSidenav', '$location', NavMenuController]
         });
-    function MenuController($rootScope, $mdSidenav, $location) {
+    function NavMenuController($rootScope, $mdSidenav, $location) {
         var vm = this;
         vm.options = [
             {
