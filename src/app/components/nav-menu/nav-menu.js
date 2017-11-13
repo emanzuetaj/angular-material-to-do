@@ -32,12 +32,18 @@
         vm.selectOption = function(option) {
             vm.selected = option;
         };
-        // select option on first load
-        for (var i = 0; i < vm.options.length; i++) {
-            if (vm.options[i].url.replace('./#!', '') === $location.path()) {
-                vm.selectOption(vm.options[i]);
-                break;
+        vm.listenToRoute = $rootScope.$on('$locationChangeStart', function() {
+            var found = false;
+            for (var i = 0; i < vm.options.length; i++) {
+                if (vm.options[i].url.replace('./#!', '')  === $location.path()) {
+                    vm.selectOption(vm.options[i]);
+                    found = true;
+                    break;
+                }
             }
-        }
+            if (!found) {
+                vm.selected = null;
+            }
+        });
     }
 })(window.angular);
