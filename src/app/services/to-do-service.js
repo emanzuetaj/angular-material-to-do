@@ -39,6 +39,9 @@
                     'date': 1389992494240
                 }
             ];
+            service.addItem = function(item) {
+                list.push(item);
+            };
             service.getList = function() {
                 return list;
             };

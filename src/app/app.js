@@ -4,7 +4,8 @@
         .module('app', [
             'ngRoute',
             'ngMaterial',
-            'ngAnimate'])
+            'ngAnimate',
+            'ngMaterialDatePicker'])
         .config(['$mdThemingProvider', function($mdThemingProvider) {
             $mdThemingProvider.theme('default')
             .primaryPalette('blue')

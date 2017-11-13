@@ -1,6 +1,21 @@
-<md-input-container class="md-icon-float md-block">
-        <!-- Use floating label instead of placeholder -->
-        <label>Title</label>
-        <md-icon md-font-library="material-icons">border_color</md-icon>
-        <input ng-model="vm.newItem.title" type="text">
-</md-input-container>
+<div layout="column" flex>
+        <md-input-container class="md-icon-float md-block">
+                <label>Title</label>
+                <md-icon md-font-library="material-icons">border_color</md-icon>
+                <input ng-model="vm.newItem.title" type="text">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+                <label>Description</label>
+                <md-icon md-font-library="material-icons">short_text</md-icon>
+                <textarea ng-model="vm.newItem.description" md-maxlength="50" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        <md-input-container>
+                <label>Date/Time</label>
+                <md-icon md-font-library="material-icons">date_range</md-icon>
+                <input mdc-datetime-picker date="true" time="true" type="text" id="time" short-time="true"
+                show-todays-date
+                format="M/D/YYYY, hh:mm a"
+                ng-model="vm.newItem.date">
+        </md-input-container>
+</div>
+<md-button class="md-raised md-primary" ng-click="vm.save()"> Add </md-button>

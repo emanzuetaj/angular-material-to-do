@@ -12,7 +12,7 @@
         .component('add', {
             controllerAs: 'vm',
             templateUrl: 'add/add.html',
-            controller: [AddController]
+            controller: ['toDoService', AddController]
         });
     angular
         .module('app')
@@ -24,7 +24,7 @@
                 template: '<add></add>'
             });
         }]);
-    function AddController() {
+    function AddController(toDoService) {
         var vm = this;
         vm.newItem = {
             'title': null,
@@ -32,6 +32,9 @@
             'complete': false,
             'canceled': false,
             'date': null
+        };
+        vm.save = function() {
+            toDoService.addItem(vm.newItem);
         };
     }
 })(window.angular);
