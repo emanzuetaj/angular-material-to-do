@@ -42,11 +42,6 @@ gulp.task("vendor:js", ["clean"],  function () {
         .pipe(gulp.dest(paths.dist + "/scripts/"));
 });
 
-gulp.task("vendor:i18n", ["clean"], function () {
-    return gulp.src("bower_components/angular-i18n/angular-locale_*.js")
-        .pipe(gulp.dest(paths.dist + "/assets/angular-i18n/"));
-});
-
 gulp.task("vendor:css", ["clean"], function() {
     return gulp.src(mainBowerFiles({ checkExistance: true }))
       .pipe(filter("**/*.css"))
@@ -56,15 +51,6 @@ gulp.task("vendor:css", ["clean"], function() {
       .pipe(gulp.dest(paths.dist + "/styles/"));
 });
 
-gulp.task("vendor:fonts", ["clean"], function () {
-    return gulp.src("bower_components/airproducts.globalit.bootstrap/dist/fonts/**/*")
-      .pipe(gulp.dest(paths.dist + "/fonts/"));
-});
-
-gulp.task("vendor:images", ["clean"], function() {
-    return gulp.src("bower_components/airproducts.globalit.bootstrap/dist/img/**/*")
-      .pipe(gulp.dest(paths.dist + "/img/"));
-});
 
 gulp.task("app:templateCache", ["clean"], function () {
     return gulp.src(paths.src + "/app/components/**/*.html")
@@ -113,7 +99,7 @@ gulp.task("app:icons", ["clean"], function () {
       .pipe(gulp.dest(paths.dist + "/"));
 });
 
-gulp.task("build", ["clean", "app:js", "app:css", "app:images", "app:icons", "vendor:js", "vendor:css", "vendor:fonts", "vendor:i18n", "vendor:images"], function () {
+gulp.task("build", ["clean", "app:js", "app:css", "app:images", "app:icons", "vendor:js", "vendor:css"], function () {
     var target = gulp.src(paths.src + "/index.html");
     var vendor = gulp.src([
         paths.dist + "/scripts/vendor*.js",
